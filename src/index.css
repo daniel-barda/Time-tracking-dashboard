@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+:root {
+  --color-blue: hsl(246, 80%, 60%);
+
+  --color-light-red--1: hsl(15, 100%, 70%);
+  --color-light-red--2: hsl(348, 100%, 68%);
+  --color-soft-blue: hsl(195, 74%, 62%);
+  --color-lime-green: hsl(145, 58%, 55%);
+  --color-violet: hsl(264, 64%, 52%);
+  --color-soft-orange: hsl(43, 84%, 65%);
+
+  --color-very-dark-blue: hsl(226, 43%, 10%);
+  --color-dark-blue: hsl(235, 46%, 20%);
+  --color--desaturated-blue: hsl(235, 45%, 61%);
+  --color-pale-blue: hsl(236, 100%, 87%);
+
+  --color-white: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: "Rubik", sans-serif;
+  background-color: var(--color-very-dark-blue);
+  min-height: 100vh;
+
+  /* flex */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  padding: 14rem 2rem;
+
+  /* grid */
+  display: grid;
+  grid-template-columns: minmax(min-content, 28rem) minmax(min-content, 80rem);
+  gap: 2rem;
+}
+
+aside {
+  background-color: var(--color-dark-blue);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  position: relative;
+  display: grid;
+}
+
+aside header {
+  padding: 2rem;
+  background-color: var(--color-blue);
+  border-radius: 12px;
+
+  position: absolute;
+  top: -12.5%;
+  left: 0%;
+  width: 100%;
+  height: 82%;
+}
+
+aside img {
+  width: 8rem;
+  height: 8rem;
+  border: solid var(--color-white) 3px;
+  border-radius: 50%;
+  margin-bottom: 4rem;
+}
+
+aside span {
+  display: block;
+  color: var(--color-pale-blue);
+  font-weight: 300;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+aside h2 {
+  font-weight: 300;
+  color: var(--color-white);
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  font-size: 3.4rem;
+  width: min-content;
+}
+
+aside ul {
+  padding: 2rem;
+  list-style: none;
+  align-self: end;
+
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+button {
+  border: none;
+  color: var(--color-pale-blue);
+  background-color: transparent;
+  font-weight: 300;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.button-active {
+  color: var(--color-white);
+}
+
+/* activity */
+.activity-container {
+  width: 100%;
+
+  /* grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min-content, 25rem));
+  gap: 2rem;
+  row-gap: 7rem;
+  justify-content: center;
+}
+
+.activity {
+  padding: 2rem;
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+  border-radius: 12px;
+  font-weight: 300;
+  position: relative;
+
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+}
+
+.activity__bg {
+  display: block;
+  width: 100%;
+  height: 40%;
+
+  border-radius: 12px;
+  position: absolute;
+  top: -30%;
+  left: 0%;
+  z-index: -1;
+}
+
+.activity__bg img {
+  position: absolute;
+  right: 6%;
+}
+
+.activity > :not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.activity__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+}
+
+.activity__hours {
+  font-size: 4.5rem;
+
+  letter-spacing: 3px;
+}
+.activity__timeframes {
+  color: var(--color-pale-blue);
+  font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 70.5625em) {
+  main {
+    grid-template-columns: 1fr;
+    row-gap: 7rem;
+    padding: 2rem;
+  }
+
+  .activity > :not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+  }
+
+  aside header {
+    padding: 4rem 2rem;
+    position: unset;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  aside img {
+    margin-bottom: 0;
+  }
+
+  aside span {
+    font-size: 1.6rem;
+  }
+
+  aside h2 {
+    width: auto;
+    font-size: 2.8rem;
+  }
+
+  aside ul {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .activity-container {
+    grid-template-columns: 1fr;
+  }
+
+  .activity__bg {
+    height: 50%;
+    top: -39%;
+  }
+
+  .activity-report {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .activity__hours {
+    font-size: 3rem;
+  }
+}
